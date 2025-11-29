@@ -1,24 +1,34 @@
 name = "story_bakery/dynamic_timer"
 version = "0.1.0"
 license = "MIT"
-includes = ["pesde.toml", "LICENSE", "README.md", ".pesde/scripts/roblox_sync_config_generator.luau", ".pesde/scripts/sourcemap_generator.luau", "src/**/*.luau", "src/**/*.json", "tests/**/*.luau"]
+includes = [
+    "pesde.toml",
+    "LICENSE",
+    "README.md",
+    ".pesde/scripts/roblox_sync_config_generator.luau",
+    ".pesde/scripts/sourcemap_generator.luau",
+    "src/**/*.luau",
+    "src/**/*.json",
+    "tests/**/*.luau",
+]
 
 [target]
 environment = "roblox"
 lib = "src/DynamicTimer.luau"
-build_files = [
-    "src",
-]
+build_files = ["src"]
 
 [indices]
 default = "https://github.com/pesde-pkg/index"
 
+[wally_indices]
+default = "https://github.com/UpliftGames/wally-index"
+
 [dependencies]
-ValueByPriority = { workspace = "story_bakery/value_by_priority", version = "^" }
-Signal = { workspace = "story_bakery/signal", version = "^" }
-Maid = { workspace = "story_bakery/maid", version = "^" }
+ValueByPriority = { repo = "Story-Bakery/ValueByPriority", rev = "main" }
+Signal = { repo = "Story-Bakery/Signal", rev = "main" }
+Maid = { repo = "Story-Bakery/Maid", rev = "main" }
 Promise = { wally = "evaera/promise", version = "^4.0.0" }
-DynamicTween = { workspace = "story_bakery/dynamic_tween", version = "^" }
+DynamicTween = { repo = "Story-Bakery/DynamicTween", rev = "main" }
 
 [scripts]
 roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
